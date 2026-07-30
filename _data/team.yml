@@ -1,0 +1,10 @@
+# "The Team" section.
+# Replace the placeholder photo: drop your team picture into assets/img/
+# (e.g. assets/img/team.jpg) and update the path below.
+photo: "/assets/img/team-placeholder.svg"
+photo_alt: "The ZECsy team"
+heading: "The Team"
+vision: >-
+  We're a crew of Zcash fans making private digital cash easy, useful, and fun.
+  ZECsy exists to grow the Zcash community — one guide, one merchant, and one
+  event at a time — because we believe financial privacy belongs to everyone.

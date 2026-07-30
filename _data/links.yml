@@ -1,0 +1,24 @@
+# Link buttons, shown in order.
+# icon: one of the SVGs in _includes/icons/ (book, wallet, pos, shirt)
+# Set url to "#" and tbd: true for links that aren't live yet.
+
+- title: "Zcash Guides"
+  subtitle: "Learn how to use Zcash, step by step"
+  url: "https://violetrollergirl.com/resources/for-providers/using-cryptocurrency/"
+  icon: "book"
+
+- title: "Download a Wallet"
+  subtitle: "Zodl — the flagship Zcash mobile wallet"
+  url: "https://zodl.com"
+  icon: "wallet"
+
+- title: "Accept Zcash at Your Business"
+  subtitle: "CipherPay merchant & point-of-sale tools"
+  url: "https://cipherpay.app"
+  icon: "pos"
+
+- title: "ZECsy Merch"
+  subtitle: "Buy ZECsy merch with ZEC"
+  url: "#"
+  icon: "shirt"
+  tbd: true

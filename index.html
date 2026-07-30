@@ -1,0 +1,76 @@
+---
+layout: default
+---
+<main class="page">
+
+  <header class="hero">
+    <img class="hero__logo" src="{{ '/assets/img/logo.svg' | relative_url }}" alt="ZECsy logo" width="96" height="96">
+    <h1 class="hero__title">{{ site.title }}</h1>
+    <p class="hero__tagline">{{ site.tagline }}</p>
+  </header>
+
+  {% if site.luma_embed_url and site.luma_embed_url != "" %}
+  <section class="event" aria-label="Upcoming events">
+    <span class="event__label">Upcoming events</span>
+    <iframe class="event__calendar"
+            src="{{ site.luma_embed_url }}"
+            width="100%" height="450" frameborder="0"
+            allowfullscreen
+            title="ZECsy upcoming events on Luma"></iframe>
+    {% if site.luma_calendar_url %}
+    <a class="event__follow" href="{{ site.luma_calendar_url }}" target="_blank" rel="noopener">Follow ZECsy on Luma</a>
+    {% endif %}
+  </section>
+  {% elsif site.data.event.active %}
+  <section class="event" aria-label="Next event">
+    <span class="event__label">{{ site.data.event.label }}</span>
+    <h2 class="event__name">{{ site.data.event.name }}</h2>
+    <p class="event__meta">{{ site.data.event.date }} &middot; {{ site.data.event.location }}</p>
+    <a class="event__cta" href="{{ site.data.event.luma_url }}" target="_blank" rel="noopener">
+      {{ site.data.event.cta }}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+    </a>
+  </section>
+  {% endif %}
+
+  <nav class="links" aria-label="ZECsy links">
+    {% for link in site.data.links %}
+    <a class="link-card{% if link.tbd %} link-card--tbd{% endif %}"
+       href="{{ link.url }}"
+       {% unless link.tbd %}target="_blank" rel="noopener"{% endunless %}>
+      <span class="link-card__icon">{% include icons/{{ link.icon }}.svg %}</span>
+      <span class="link-card__text">
+        <span class="link-card__title">{{ link.title }}{% if link.tbd %} <em>(coming soon)</em>{% endif %}</span>
+        <span class="link-card__subtitle">{{ link.subtitle }}</span>
+      </span>
+      <svg class="link-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+    </a>
+    {% endfor %}
+  </nav>
+
+  <section class="team" aria-label="The team">
+    <img class="team__photo" src="{{ site.data.team.photo | relative_url }}" alt="{{ site.data.team.photo_alt }}">
+    <div class="team__body">
+      <h2 class="team__title">{{ site.data.team.heading }}</h2>
+      <p class="team__vision">{{ site.data.team.vision }}</p>
+    </div>
+  </section>
+
+  <section class="donate" aria-label="Donate">
+    <h2 class="donate__title">Donate ZEC</h2>
+    <p class="donate__blurb">{{ site.donation.label }}</p>
+
+    <div class="donate__qr" id="qr" data-address="{{ site.donation.uaddress }}"></div>
+
+    <div class="donate__address">
+      <code id="address">{{ site.donation.uaddress }}</code>
+      <button id="copy" type="button" aria-label="Copy address">Copy</button>
+    </div>
+    <p class="donate__hint">Scan with any Zcash wallet, or copy the unified address above.</p>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> ZECsy &middot; Powered by <a href="https://z.cash" target="_blank" rel="noopener">Zcash</a></p>
+  </footer>
+
+</main>

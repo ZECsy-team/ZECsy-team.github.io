@@ -1,0 +1,352 @@
+---
+---
+:root {
+  --bg: #0d0d10;
+  --bg-card: #17171d;
+  --bg-card-hover: #1e1e26;
+  --border: #2a2a34;
+  --text: #f2f2f5;
+  --text-dim: #9b9ba6;
+  --gold: #f4b728;
+  --gold-soft: rgba(244, 183, 40, 0.12);
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(244, 183, 40, 0.10), transparent),
+    radial-gradient(ellipse 60% 40% at 50% 110%, rgba(244, 183, 40, 0.05), transparent);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 48px 20px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+}
+
+.hero__logo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--gold-soft), 0 8px 32px rgba(244, 183, 40, 0.15);
+}
+
+.hero__title {
+  margin-top: 16px;
+  font-size: 2rem;
+  letter-spacing: 0.02em;
+}
+
+.hero__tagline {
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+/* Event banner */
+.event {
+  background: linear-gradient(135deg, var(--gold-soft), rgba(244, 183, 40, 0.04));
+  border: 1px solid rgba(244, 183, 40, 0.35);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  text-align: center;
+}
+
+.event__label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  background: var(--gold-soft);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+
+.event__name {
+  margin-top: 10px;
+  font-size: 1.25rem;
+}
+
+.event__meta {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
+
+.event__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  padding: 10px 22px;
+  background: var(--gold);
+  color: #141414;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.event__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(244, 183, 40, 0.35);
+}
+
+.event__cta svg {
+  width: 16px;
+  height: 16px;
+}
+
+.event__calendar {
+  display: block;
+  margin-top: 14px;
+  border: 0;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.event__follow {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.event__follow:hover {
+  text-decoration: underline;
+}
+
+/* Link cards */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  color: var(--text);
+  text-decoration: none;
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.link-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.link-card__icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--gold-soft);
+  color: var(--gold);
+}
+
+.link-card__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.link-card__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.link-card__title {
+  font-weight: 700;
+}
+
+.link-card__title em {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.link-card__subtitle {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+.link-card__arrow {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-left: auto;
+  color: var(--text-dim);
+}
+
+.link-card--tbd {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.link-card--tbd:hover {
+  transform: none;
+  border-color: var(--border);
+  background: var(--bg-card);
+}
+
+/* Team */
+.team {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.team__photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 8 / 5;
+  object-fit: cover;
+}
+
+.team__body {
+  padding: 22px 24px 26px;
+  text-align: center;
+}
+
+.team__title {
+  font-size: 1.25rem;
+}
+
+.team__vision {
+  margin-top: 10px;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* Donation */
+.donate {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.donate__title {
+  font-size: 1.25rem;
+}
+
+.donate__blurb {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.donate__qr {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 12px;
+  line-height: 0;
+}
+
+.donate__qr img,
+.donate__qr svg {
+  width: 180px;
+  height: 180px;
+}
+
+.donate__address {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.donate__address code {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  text-align: left;
+}
+
+.donate__address button {
+  flex: none;
+  background: var(--gold);
+  color: #141414;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+.donate__address button:hover {
+  filter: brightness(1.1);
+}
+
+.donate__hint {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+.footer a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

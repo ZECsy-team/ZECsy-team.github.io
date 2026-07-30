@@ -1,0 +1,9 @@
+# Next event banner shown at the top of the page.
+# Set `active: false` to hide the banner when there's no upcoming event.
+active: true
+label: "Next event"
+name: "Zcon — Catch ZECsy there!"
+date: "Date TBD"
+location: "Location TBD"
+luma_url: "https://lu.ma/zecsy"
+cta: "RSVP on Luma"

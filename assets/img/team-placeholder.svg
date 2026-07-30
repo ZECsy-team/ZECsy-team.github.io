@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#1e1e26"/>
+  <g fill="none" stroke="#3a3a46" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="290" cy="200" r="55"/>
+    <path d="M195 360c0-52 43-85 95-85s95 33 95 85"/>
+    <circle cx="510" cy="200" r="55"/>
+    <path d="M415 360c0-52 43-85 95-85s95 33 95 85"/>
+  </g>
+  <text x="400" y="440" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" fill="#9b9ba6">Team photo coming soon</text>
+</svg>
