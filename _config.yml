@@ -24,6 +24,20 @@ luma_calendar_url: "https://luma.com/zecsy"
 donation:
   uaddress: "u1v39phfw0z0e5yqjlqynzdnf5cqnnrkw2vdf76xk4el0ax5thn7rjn37e86jgw4cwezryekdtaqyyyjz5uj20geghwk6l8spdrvre0pz4"
   label: "Support ZECsy with shielded ZEC"
+  description: >-
+    We also host workshops for at-risk communities, leveraging credible
+    messengers in the local communities. We provide students with a small
+    amount of starter ZEC during the class to practice trades, swaps, and
+    off-ramping.
+  tiers:
+    - amount: "$50"
+      text: "Student tuition for a ZECsy workshop"
+    - amount: "$500"
+      text: "Venue fee for a workshop"
+    - amount: "$6K"
+      text: "Fully covers travel, venue, and tuition for 30 students in a US city"
+    - amount: "$2"
+      text: "Any small amount helps us reach the users who need financial education"
 
 # Build settings
 markdown: kramdown

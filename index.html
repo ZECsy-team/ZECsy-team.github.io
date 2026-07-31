@@ -86,6 +86,21 @@ layout: default
     <h2 class="donate__title">Donate ZEC</h2>
     <p class="donate__blurb">{{ site.donation.label }}</p>
 
+    {% if site.donation.description %}
+    <p class="donate__description">{{ site.donation.description }}</p>
+    {% endif %}
+
+    {% if site.donation.tiers %}
+    <ul class="donate__tiers">
+      {% for tier in site.donation.tiers %}
+      <li class="tier">
+        <span class="tier__amount">{{ tier.amount }}</span>
+        <span class="tier__text">{{ tier.text }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
     <div class="donate__qr" id="qr" data-address="{{ site.donation.uaddress }}"></div>
 
     <div class="donate__address">

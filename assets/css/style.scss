@@ -339,6 +339,50 @@ body {
   margin-top: 4px;
 }
 
+.donate__description {
+  margin-top: 14px;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.donate__tiers {
+  list-style: none;
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.tier {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tier__amount {
+  color: var(--gold);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.tier__text {
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 420px) {
+  .donate__tiers {
+    grid-template-columns: 1fr;
+  }
+}
+
 .donate__qr {
   display: inline-block;
   margin-top: 18px;
