@@ -10,6 +10,7 @@ layout: default
   </header>
 
   {% if site.luma_embed_url and site.luma_embed_url != "" %}
+    {% if site.data.luma_status.has_events %}
   <section class="event" aria-label="Upcoming events">
     <span class="event__label">Upcoming events</span>
     <iframe class="event__calendar"
@@ -21,6 +22,15 @@ layout: default
     <a class="event__follow" href="{{ site.luma_calendar_url }}" target="_blank" rel="noopener">Follow ZECsy on Luma</a>
     {% endif %}
   </section>
+    {% else %}
+  <section class="event event--compact" aria-label="Events">
+    <p class="event__none">No upcoming events right now.</p>
+    <a class="event__cta" href="{{ site.luma_calendar_url | default: site.luma_embed_url }}" target="_blank" rel="noopener">
+      Follow ZECsy on Luma
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+    </a>
+  </section>
+    {% endif %}
   {% elsif site.data.event.active %}
   <section class="event" aria-label="Next event">
     <span class="event__label">{{ site.data.event.label }}</span>

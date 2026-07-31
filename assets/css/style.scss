@@ -129,6 +129,25 @@ body {
   background: #fff;
 }
 
+.event--compact {
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.event--compact .event__cta {
+  margin-top: 0;
+}
+
+.event__none {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
 .event__follow {
   display: inline-block;
   margin-top: 12px;

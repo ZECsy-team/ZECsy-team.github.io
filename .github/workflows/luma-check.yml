@@ -1,0 +1,40 @@
+name: Check Luma for upcoming events
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # every 6 hours
+  workflow_dispatch: {}      # allow manual runs from the Actions tab
+
+permissions:
+  contents: write
+
+env:
+  CALENDAR_API_ID: cal-X5A0GFtG5tqoPAw
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Query Luma calendar
+        run: |
+          count=$(curl -sf "https://api.lu.ma/calendar/get-items?calendar_api_id=${CALENDAR_API_ID}&period=future&pagination_limit=1" | jq '.entries | length')
+          if [ "$count" -gt 0 ]; then
+            echo '{"has_events": true}' > _data/luma_status.json
+          else
+            echo '{"has_events": false}' > _data/luma_status.json
+          fi
+          cat _data/luma_status.json
+
+      - name: Commit if changed
+        run: |
+          if ! git diff --quiet _data/luma_status.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add _data/luma_status.json
+            git commit -m "Update Luma events status"
+            git push
+          else
+            echo "No change in Luma events status."
+          fi
