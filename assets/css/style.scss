@@ -163,15 +163,15 @@ body {
 
 /* Slogan card */
 .slogan {
-  background: linear-gradient(135deg, var(--gold), #d99a0b);
+  background: linear-gradient(135deg, var(--gold-soft), rgba(244, 183, 40, 0.04));
+  border: 1px solid rgba(244, 183, 40, 0.35);
   border-radius: var(--radius);
   padding: 22px 24px;
   text-align: center;
-  box-shadow: 0 6px 24px rgba(244, 183, 40, 0.25);
 }
 
 .slogan__text {
-  color: #141414;
+  color: var(--gold);
   font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: 0.02em;
