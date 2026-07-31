@@ -9,6 +9,45 @@ layout: default
     <p class="hero__tagline">{{ site.tagline }}</p>
   </header>
 
+  <section class="team" aria-label="The team">
+    <img class="team__photo" src="{{ site.data.team.photo | relative_url }}" alt="{{ site.data.team.photo_alt }}">
+    <div class="team__body">
+      <h2 class="team__title">{{ site.data.team.heading }}</h2>
+      <p class="team__vision">{{ site.data.team.vision }}</p>
+      {% if site.data.team.members %}
+      <ul class="team__members">
+        {% for member in site.data.team.members %}
+        <li class="team-member">
+          <span class="team-member__name">{{ member.name }}</span>
+          {% if member.socials %}
+          {% for social in member.socials %}
+          <a class="team-member__social" href="{{ social.url }}" target="_blank" rel="noopener" aria-label="{{ member.name }} on {{ social.platform }}">{% include icons/{{ social.platform }}.svg %}</a>
+          {% endfor %}
+          {% else %}
+          <span class="team-member__tbd">socials coming soon</span>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </section>
+
+  <nav class="links" aria-label="ZECsy links">
+    {% for link in site.data.links %}
+    <a class="link-card{% if link.tbd %} link-card--tbd{% endif %}"
+       href="{{ link.url }}"
+       {% unless link.tbd %}target="_blank" rel="noopener"{% endunless %}>
+      <span class="link-card__icon">{% include icons/{{ link.icon }}.svg %}</span>
+      <span class="link-card__text">
+        <span class="link-card__title">{{ link.title }}{% if link.tbd %} <em>(coming soon)</em>{% endif %}</span>
+        <span class="link-card__subtitle">{{ link.subtitle }}</span>
+      </span>
+      <svg class="link-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+    </a>
+    {% endfor %}
+  </nav>
+
   {% if site.luma_embed_url and site.luma_embed_url != "" %}
     {% if site.data.luma_status.has_events %}
   <section class="event" aria-label="Upcoming events">
@@ -42,45 +81,6 @@ layout: default
     </a>
   </section>
   {% endif %}
-
-  <nav class="links" aria-label="ZECsy links">
-    {% for link in site.data.links %}
-    <a class="link-card{% if link.tbd %} link-card--tbd{% endif %}"
-       href="{{ link.url }}"
-       {% unless link.tbd %}target="_blank" rel="noopener"{% endunless %}>
-      <span class="link-card__icon">{% include icons/{{ link.icon }}.svg %}</span>
-      <span class="link-card__text">
-        <span class="link-card__title">{{ link.title }}{% if link.tbd %} <em>(coming soon)</em>{% endif %}</span>
-        <span class="link-card__subtitle">{{ link.subtitle }}</span>
-      </span>
-      <svg class="link-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
-    </a>
-    {% endfor %}
-  </nav>
-
-  <section class="team" aria-label="The team">
-    <img class="team__photo" src="{{ site.data.team.photo | relative_url }}" alt="{{ site.data.team.photo_alt }}">
-    <div class="team__body">
-      <h2 class="team__title">{{ site.data.team.heading }}</h2>
-      <p class="team__vision">{{ site.data.team.vision }}</p>
-      {% if site.data.team.members %}
-      <ul class="team__members">
-        {% for member in site.data.team.members %}
-        <li class="team-member">
-          <span class="team-member__name">{{ member.name }}</span>
-          {% if member.socials %}
-          {% for social in member.socials %}
-          <a class="team-member__social" href="{{ social.url }}" target="_blank" rel="noopener" aria-label="{{ member.name }} on {{ social.platform }}">{% include icons/{{ social.platform }}.svg %}</a>
-          {% endfor %}
-          {% else %}
-          <span class="team-member__tbd">socials coming soon</span>
-          {% endif %}
-        </li>
-        {% endfor %}
-      </ul>
-      {% endif %}
-    </div>
-  </section>
 
   <section class="donate" aria-label="Donate">
     <h2 class="donate__title">Donate ZEC</h2>
