@@ -1,7 +1,7 @@
 # "The Team" section.
 # Replace the placeholder photo: drop your team picture into assets/img/
 # (e.g. assets/img/team.jpg) and update the path below.
-photo: "/assets/img/team-placeholder.svg"
+photo: "/assets/img/team.jpg"
 photo_alt: "The ZECsy team"
 heading: "The Team"
 vision: >-
