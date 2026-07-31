@@ -8,3 +8,15 @@ vision: >-
   We're a crew of Zcash fans making private digital cash easy, useful, and fun.
   ZECsy exists to grow the Zcash community — one guide, one merchant, and one
   event at a time — because we believe financial privacy belongs to everyone.
+
+# Team members shown under the vision statement.
+# socials: platform must match an icon in _includes/icons/ (x, linkedin).
+# Omit socials (or leave the list empty) to show "socials coming soon".
+members:
+  - name: "Mylo"
+    socials:
+      - platform: "x"
+        url: "https://x.com/zreadymouse"
+      - platform: "linkedin"
+        url: "https://www.linkedin.com/in/mylo-mbennett/"
+  - name: "Violet"

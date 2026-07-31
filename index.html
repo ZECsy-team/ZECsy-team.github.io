@@ -63,6 +63,22 @@ layout: default
     <div class="team__body">
       <h2 class="team__title">{{ site.data.team.heading }}</h2>
       <p class="team__vision">{{ site.data.team.vision }}</p>
+      {% if site.data.team.members %}
+      <ul class="team__members">
+        {% for member in site.data.team.members %}
+        <li class="team-member">
+          <span class="team-member__name">{{ member.name }}</span>
+          {% if member.socials %}
+          {% for social in member.socials %}
+          <a class="team-member__social" href="{{ social.url }}" target="_blank" rel="noopener" aria-label="{{ member.name }} on {{ social.platform }}">{% include icons/{{ social.platform }}.svg %}</a>
+          {% endfor %}
+          {% else %}
+          <span class="team-member__tbd">socials coming soon</span>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
     </div>
   </section>
 
