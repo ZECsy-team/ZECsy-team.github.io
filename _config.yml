@@ -5,8 +5,7 @@ description: >-
   ZECsy is a Zcash community and marketing team. Find our guides, wallet
   recommendations, merchant tools, merch, and upcoming events — all in one place.
 
-# Update this to https://zecsy.com once the custom domain is live
-url: "https://zecsy.github.io"
+url: "https://zecsy.com"
 baseurl: ""
 
 # Social / meta

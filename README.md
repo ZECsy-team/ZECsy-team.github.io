@@ -1,4 +1,4 @@
-# zecsy.github.io
+# Website for zecsy.com
 
 Landing page and linktree for **ZECsy**, a Zcash community and marketing team.
 Built with Jekyll and hosted on GitHub Pages.
@@ -52,21 +52,3 @@ bundle exec jekyll serve
 ```
 
 Then open http://localhost:4000.
-
-## Deploying
-
-Push to `main`. GitHub Pages builds and deploys automatically (Settings →
-Pages → Deploy from branch → `main`, root folder).
-
-## Custom domain (zecsy.com)
-
-When ready to move to zecsy.com:
-
-1. Add a `CNAME` file to the repo root containing exactly `zecsy.com`.
-2. In the domain registrar's DNS, add:
-   - `A` records for the apex (`zecsy.com`) pointing to GitHub Pages IPs:
-     `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - A `CNAME` record for `www` pointing to `zecsy.github.io`
-3. In repo Settings → Pages, set the custom domain to `zecsy.com` and enable
-   **Enforce HTTPS** once the certificate is issued.
-4. Update `url:` in `_config.yml` to `https://zecsy.com`.
