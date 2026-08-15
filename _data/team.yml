@@ -20,3 +20,6 @@ members:
       - platform: "linkedin"
         url: "https://www.linkedin.com/in/mylo-mbennett/"
   - name: "Violet"
+    socials:
+      - platform: "x"
+        url: "https://x.com/rollergirlVi"
