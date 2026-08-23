@@ -1,0 +1,8 @@
+{%- comment -%}
+Outputs a CSV cell only if it holds a real value. Placeholder cells use
+"TBD" or "NOT FOUND" while research is pending, and those should render as
+nothing rather than as a broken link or a fake handle.
+{%- endcomment -%}
+{%- assign _value = include.value | strip -%}
+{%- assign _probe = _value | downcase -%}
+{%- unless _probe == "" or _probe contains "tbd" or _probe contains "not found" -%}{{ _value }}{%- endunless -%}

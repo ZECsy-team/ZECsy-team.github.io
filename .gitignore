@@ -6,3 +6,12 @@ vendor/
 .bundle/
 Gemfile.lock
 .DS_Store
+
+# LibreOffice / OpenOffice lock files
+.~lock.*#
+
+# Full research directory. Never commit this — it has organizer names,
+# notes, and sources. Publish a slim public copy with:
+#   ruby scripts/publish-directory.rb
+_private/orgs.csv
+zcash_global_orgs_directory.csv

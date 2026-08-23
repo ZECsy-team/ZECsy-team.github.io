@@ -1,0 +1,104 @@
+---
+layout: default
+permalink: /directory/
+title: Find Zcash Friends Near You
+description: >-
+  A browsable directory of Zcash meetups, regional communities, and
+  organizations. Find the people building Zcash near you.
+noindex: true
+---
+{%- comment -%}
+  Listings come from the public file _data/orgs.csv (name, region, twitter,
+  bluesky, website). The research spreadsheet stays in _private/orgs.csv and
+  is never built into the site.
+{%- endcomment -%}
+
+{%- assign orgs = site.data.orgs | sort: "name" -%}
+
+<main class="page page--wide">
+
+  <header class="dir-hero">
+    <a class="dir-back" href="{{ '/' | relative_url }}">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+      ZECsy
+    </a>
+    <h1 class="dir-hero__title">Find Zcash Friends Near You</h1>
+  </header>
+
+  <p class="dir-count">
+    {{ orgs | size }} listings
+  </p>
+
+  <div class="dir-results" id="dir-results">
+    {% for org in orgs %}
+      {%- assign region = org.region | strip -%}
+      {%- capture twitter %}{% include directory/known.html value=org.twitter %}{% endcapture -%}
+      {%- capture bluesky %}{% include directory/known.html value=org.bluesky %}{% endcapture -%}
+      {%- capture website %}{% include directory/known.html value=org.website %}{% endcapture -%}
+
+      {%- assign badge = "" -%}
+      {%- if twitter != "" -%}
+        {%- assign badge = twitter -%}
+      {%- elsif bluesky != "" -%}
+        {%- assign badge = bluesky -%}
+      {%- endif -%}
+
+    <details class="org">
+      <summary class="org__summary">
+        <span class="org__lines">
+          <span class="org__name">{{ org.name }}</span>
+          {% if region != "" %}<span class="org__location">{{ region }}</span>{% endif %}
+        </span>
+        {% if badge != "" %}<span class="org__badge">{{ badge }}</span>{% endif %}
+        <svg class="org__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+
+      <div class="org__body">
+        {%- capture contacts -%}
+          {%- if website != "" -%}
+          <li><a href="{{ website }}" target="_blank" rel="noopener">Website</a></li>
+          {%- endif -%}
+          {%- if twitter != "" -%}
+            {%- if twitter contains "http" -%}
+          <li><a href="{{ twitter }}" target="_blank" rel="noopener">{{ twitter | truncate: 36 }} on X</a></li>
+            {%- else -%}
+          <li><a href="https://x.com/{{ twitter | remove: '@' }}" target="_blank" rel="noopener">{{ twitter }} on X</a></li>
+            {%- endif -%}
+          {%- endif -%}
+          {%- if bluesky != "" -%}
+            {%- if bluesky contains "http" -%}
+          <li><a href="{{ bluesky }}" target="_blank" rel="noopener">Bluesky</a></li>
+            {%- else -%}
+          <li><a href="https://bsky.app/profile/{{ bluesky | remove: '@' }}" target="_blank" rel="noopener">{{ bluesky }} on Bluesky</a></li>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endcapture -%}
+        {%- assign contacts = contacts | strip -%}
+        {% if contacts != "" %}
+        <ul class="org__links">{{ contacts }}</ul>
+        {% else %}
+        <p class="org__link-empty">No public contact listed yet.</p>
+        {% endif %}
+      </div>
+    </details>
+    {% endfor %}
+  </div>
+
+  <section class="dir-cta">
+    <h2 class="dir-cta__title">Organizing something we missed?</h2>
+    <p class="dir-cta__blurb">
+      This list is built by hand and it is definitely incomplete. If your
+      community is missing, listed wrong, or should not be listed at all, tell
+      us and we will fix it.
+    </p>
+    <a class="dir-cta__button" href="{{ site.directory.submit_url }}" target="_blank" rel="noopener">
+      Add or fix a listing
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+    </a>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> ZECsy &middot; Powered by <a href="https://z.cash" target="_blank" rel="noopener">Zcash</a></p>
+  </footer>
+
+</main>

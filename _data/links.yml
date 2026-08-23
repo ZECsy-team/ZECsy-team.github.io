@@ -1,6 +1,7 @@
 # Link buttons, shown in order.
-# icon: one of the SVGs in _includes/icons/ (book, wallet, pos, shirt)
+# icon: one of the SVGs in _includes/icons/ (book, wallet, pos, shirt, pin)
 # Set url to "#" and tbd: true for links that aren't live yet.
+# Set internal: true for pages on this site, so they open in the same tab.
 
 - title: "Download a Wallet"
   subtitle: "Zodl — the flagship Zcash mobile wallet"
@@ -22,3 +23,9 @@
   url: "#"
   icon: "shirt"
   tbd: true
+
+- title: "Find Zcash Friends Near You"
+  subtitle: "Meetups, communities & orgs around the world"
+  url: "/directory/"
+  icon: "pin"
+  internal: true

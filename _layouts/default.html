@@ -3,13 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ site.title }} — {{ site.tagline }}</title>
-  <meta name="description" content="{{ site.description | strip_newlines | strip }}">
+  {% if page.title %}{% assign page_title = page.title | append: " — " | append: site.title %}{% else %}{% assign page_title = site.title | append: " — " | append: site.tagline %}{% endif %}
+  {% assign page_description = page.description | default: site.description | strip_newlines | strip %}
+
+  <title>{{ page_title }}</title>
+  <meta name="description" content="{{ page_description }}">
+  {% if page.noindex %}<meta name="robots" content="noindex, follow">{% endif %}
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ site.title }} — {{ site.tagline }}">
-  <meta property="og:description" content="{{ site.description | strip_newlines | strip }}">
-  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ page_description }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ site.data.team.photo }}">
   <meta name="twitter:card" content="summary">
   {% if site.twitter_handle != "" %}<meta name="twitter:site" content="@{{ site.twitter_handle }}">{% endif %}
@@ -21,5 +25,8 @@
   {{ content }}
   <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  {% for script in page.extra_js %}
+  <script src="{{ script | relative_url }}"></script>
+  {% endfor %}
 </body>
 </html>

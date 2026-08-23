@@ -19,6 +19,14 @@ twitter_handle: ""   # e.g. "zecsy" (without the @)
 luma_embed_url: "https://luma.com/embed/calendar/cal-X5A0GFtG5tqoPAw/events"
 luma_calendar_url: "https://luma.com/zecsy"
 
+# Zcash friends directory (/directory/)
+# Public listings: _data/orgs.csv (name, region, twitter, bluesky, website).
+# Research copy:   _private/orgs.csv (gitignored). Rebuild the public file
+# with `ruby scripts/publish-directory.rb`.
+# Set noindex from directory.html until the listings are ready to be indexed.
+directory:
+  submit_url: "https://github.com/ZECsy-team/ZECsy-team.github.io/issues/new?labels=directory&title=Directory:%20add%20or%20fix%20a%20listing"
+
 # Donation settings
 donation:
   uaddress: "u1v39phfw0z0e5yqjlqynzdnf5cqnnrkw2vdf76xk4el0ax5thn7rjn37e86jgw4cwezryekdtaqyyyjz5uj20geghwk6l8spdrvre0pz4"
@@ -45,3 +53,5 @@ exclude:
   - Gemfile.lock
   - README.md
   - vendor
+  - scripts
+  - _private

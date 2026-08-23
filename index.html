@@ -39,9 +39,10 @@ layout: default
 
   <nav class="links" aria-label="ZECsy links">
     {% for link in site.data.links %}
+    {% if link.internal %}{% assign link_url = link.url | relative_url %}{% else %}{% assign link_url = link.url %}{% endif %}
     <a class="link-card{% if link.tbd %} link-card--tbd{% endif %}"
-       href="{{ link.url }}"
-       {% unless link.tbd %}target="_blank" rel="noopener"{% endunless %}>
+       href="{{ link_url }}"
+       {% unless link.tbd or link.internal %}target="_blank" rel="noopener"{% endunless %}>
       <span class="link-card__icon">{% include icons/{{ link.icon }}.svg %}</span>
       <span class="link-card__text">
         <span class="link-card__title">{{ link.title }}{% if link.tbd %} <em>(coming soon)</em>{% endif %}</span>
