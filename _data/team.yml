@@ -15,11 +15,15 @@ vision: >-
 members:
   - name: "Mylo"
     socials:
+      - platform: "email"
+        url: "mailto:mylo.mbennett@zecsy.com"
       - platform: "x"
-        url: "https://x.com/zreadymouse"
+        url: "https://x.com/zReadyMouse"
       - platform: "linkedin"
         url: "https://www.linkedin.com/in/mylo-mbennett/"
   - name: "Violet"
     socials:
+      - platform: "email"
+        url: "mailto:violet@zecsy.com"
       - platform: "x"
         url: "https://x.com/rollergirlVi"
