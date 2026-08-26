@@ -26,6 +26,5 @@
 
 - title: "Find Zcash Friends Near You"
   subtitle: "Meetups, communities & orgs around the world"
-  url: "/directory/"
+  url: "https://openzcash.org/communities"
   icon: "pin"
-  internal: true

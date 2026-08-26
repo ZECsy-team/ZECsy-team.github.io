@@ -19,11 +19,12 @@ twitter_handle: ""   # e.g. "zecsy" (without the @)
 luma_embed_url: "https://luma.com/embed/calendar/cal-X5A0GFtG5tqoPAw/events"
 luma_calendar_url: "https://luma.com/zecsy"
 
-# Zcash friends directory (/directory/)
+# Zcash friends directory (/directory/) — unpublished.
+# The homepage "Find Zcash Friends Near You" button now links to
+# https://openzcash.org/communities instead of this local directory.
 # Public listings: _data/orgs.csv (name, region, twitter, bluesky, website).
 # Research copy:   _private/orgs.csv (gitignored). Rebuild the public file
 # with `ruby scripts/publish-directory.rb`.
-# Set noindex from directory.html until the listings are ready to be indexed.
 directory:
   submit_url: "https://github.com/ZECsy-team/ZECsy-team.github.io/issues/new?labels=directory&title=Directory:%20add%20or%20fix%20a%20listing"
 
