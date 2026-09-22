@@ -29,3 +29,5 @@ members:
         url: "mailto:violet@zecsy.com"
       - platform: "x"
         url: "https://x.com/rollergirlVi"
+      - platform: "zcash"
+        url: "zcash:u1mhgwfzmjks8d2kgwh7nrrycljzzfuhl5fak6efvnqazxwu2f4ssftlf5snpgavfx649ztp5l2lzwzqsrhu5jf4x97jzu6a37qysjvjwq8ffcspd46dg99s4mctaagq73n823edhza3s8mxytur48lnuprad8j4avhvymsxv38u7t5rhdsc449fyk70d9zjjqvrln4lzaeghwcmxn2du"
