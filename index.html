@@ -21,7 +21,7 @@ layout: default
           <span class="team-member__name">{{ member.name }}</span>
           {% if member.socials %}
           {% for social in member.socials %}
-          <a class="team-member__social" href="{{ social.url }}" target="_blank" rel="noopener" aria-label="{{ member.name }} on {{ social.platform }}">{% include icons/{{ social.platform }}.svg %}</a>
+          <a class="team-member__social" href="{{ social.url }}" title="Message {{ member.name }} via {{ social.platform | capitalize }}" target="_blank" rel="noopener" aria-label="{{ member.name }} on {{ social.platform }}">{% include icons/{{ social.platform }}.svg %}</a>
           {% endfor %}
           {% else %}
           <span class="team-member__tbd">socials coming soon</span>
