@@ -321,6 +321,9 @@ body {
   color: var(--text-dim);
   transition: color 0.15s ease;
 }
+.team-member__social svg {
+  fill: var(--text-dim);
+}
 
 .team-member__social:hover {
   color: var(--gold);

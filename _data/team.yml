@@ -23,6 +23,8 @@ members:
         url: "https://www.linkedin.com/in/mylo-mbennett/"
   - name: "Violet"
     socials:
+      - platform: "signal"
+        url: "https://signal.me/#eu/RCtktNL-BhGZOIAreVGUjL-yPDXBI-8Sabaajs8wxpHS1Xl9UmZDJKiXQtw3EwEm"
       - platform: "email"
         url: "mailto:violet@zecsy.com"
       - platform: "x"
