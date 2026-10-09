@@ -37,7 +37,7 @@ layout: default
     <p class="slogan__text">Privacy is ZECsy</p>
   </section>
 
-  <nav class="links" aria-label="ZECsy links">
+  <nav id="links" class="links" aria-label="ZECsy links">
     {% for link in site.data.links %}
     {% if link.internal %}{% assign link_url = link.url | relative_url %}{% else %}{% assign link_url = link.url %}{% endif %}
     <a class="link-card{% if link.tbd %} link-card--tbd{% endif %}"
@@ -55,7 +55,7 @@ layout: default
 
   {% if site.luma_embed_url and site.luma_embed_url != "" %}
     {% if site.data.luma_status.has_events %}
-  <section class="event" aria-label="Upcoming events">
+  <section id="upcoming-events" class="event" aria-label="Upcoming events">
     <span class="event__label">Upcoming events</span>
     <iframe class="event__calendar"
             src="{{ site.luma_embed_url }}"
@@ -87,7 +87,7 @@ layout: default
   </section>
   {% endif %}
 
-  <section class="donate" aria-label="Donate">
+  <section id="donate" class="donate" aria-label="Donate">
     <h2 class="donate__title">Donate ZEC</h2>
     <p class="donate__blurb">{{ site.donation.label }}</p>
 
