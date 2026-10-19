@@ -19,7 +19,7 @@ jobs:
 
       - name: Query Luma calendar
         run: |
-          count=$(curl -sf "https://api.lu.ma/calendar/get-items?calendar_api_id=${CALENDAR_API_ID}&period=future&pagination_limit=1" | jq '.entries | length')
+          count=$(curl -sf "https://api.lu.ma/calendar/get-items?calendar_api_id=${CALENDAR_API_ID}&period=future&pagination_limit=1" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" | jq '.entries | length')
           if [ "$count" -gt 0 ]; then
             echo '{"has_events": true}' > _data/luma_status.json
           else
