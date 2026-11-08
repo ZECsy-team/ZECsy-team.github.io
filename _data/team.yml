@@ -17,6 +17,8 @@ members:
     socials:
       - platform: "email"
         url: "mailto:mylo.mbennett@zecsy.com"
+      - platform: "bluesky"
+        url: "https://bsky.app/profile/mylo-bennett.com"
       - platform: "x"
         url: "https://x.com/zReadyMouse"
       - platform: "linkedin"
@@ -27,6 +29,8 @@ members:
         url: "https://signal.me/#eu/RCtktNL-BhGZOIAreVGUjL-yPDXBI-8Sabaajs8wxpHS1Xl9UmZDJKiXQtw3EwEm"
       - platform: "email"
         url: "mailto:violet@zecsy.com"
+      - platform: "bluesky"
+        url: "https://bsky.app/profile/violetrollergirl.com"
       - platform: "x"
         url: "https://x.com/rollergirlVi"
       - platform: "zcash"
