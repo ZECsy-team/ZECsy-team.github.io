@@ -15,7 +15,7 @@ layout: default
       <h2 class="team__title">{{ site.data.team.heading }}</h2>
       <p class="team__vision">{{ site.data.team.vision }}</p>
       {% if site.data.team.members %}
-      <ul class="team__members">
+      <ul class="team__members" id="zecsy-team-members">
         {% for member in site.data.team.members %}
         <li class="team-member">
           <span class="team-member__name">{{ member.name }}</span>
@@ -93,6 +93,7 @@ layout: default
 
     {% if site.donation.description %}
     <p class="donate__description">{{ site.donation.description }}</p>
+    <p class="donate__description">Donate to support our ZECsy initiative using the options below, or use the Zcash donation/message option to send a personal donation to a specific <a href="#zecsy-team-members">ZECsy team member</a> with a private memo. We appreciate your support!</p>
     {% endif %}
 
     {% if site.donation.tiers %}
