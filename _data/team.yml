@@ -5,25 +5,18 @@ photo: "/assets/img/team.jpg"
 photo_alt: "The ZECsy team"
 heading: "The Team"
 vision: >-
-  We're a crew of Zcash fans making private digital cash easy, useful, and fun.
-  ZECsy exists to grow the Zcash community — one guide, one merchant, and one
-  event at a time — because we believe financial privacy belongs to everyone.
+  We're Zcash users who work in the adult industries making private digital cash
+  easy, safe, and fun to use. ZECsy exists to grow adoption of these encrypted
+  payment mechanisms, particularly among sex workers, trans people, and others
+  who need access to encrypted, surveillance-free money.
+  Because financial privacy belongs to everyone.
 
 # Team members shown under the vision statement.
 # socials: platform must match an icon in _includes/icons/ (x, linkedin).
 # Omit socials (or leave the list empty) to show "socials coming soon".
 members:
-  - name: "Mylo"
-    socials:
-      - platform: "email"
-        url: "mailto:mylo.mbennett@zecsy.com"
-      - platform: "bluesky"
-        url: "https://bsky.app/profile/mylo-bennett.com"
-      - platform: "x"
-        url: "https://x.com/zReadyMouse"
-      - platform: "linkedin"
-        url: "https://www.linkedin.com/in/mylo-mbennett/"
   - name: "Violet"
+    role: "Educator and public speaker"
     socials:
       - platform: "signal"
         url: "https://signal.me/#eu/RCtktNL-BhGZOIAreVGUjL-yPDXBI-8Sabaajs8wxpHS1Xl9UmZDJKiXQtw3EwEm"

@@ -18,7 +18,7 @@ layout: default
       <ul class="team__members" id="zecsy-team-members">
         {% for member in site.data.team.members %}
         <li class="team-member">
-          <span class="team-member__name">{{ member.name }}</span>
+          <span class="team-member__name">{{ member.name }}, <span class="team-member__role">{{ member.role }}</span></span>
           {% if member.socials %}
           {% for social in member.socials %}
           <a class="team-member__social" href="{{ social.url }}" title="Message {{ member.name }} via {{ social.platform | capitalize }}" target="_blank" rel="noopener" aria-label="{{ member.name }} on {{ social.platform }}">{% include icons/{{ social.platform }}.svg %}</a>
