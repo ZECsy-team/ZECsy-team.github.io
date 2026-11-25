@@ -10,10 +10,12 @@ layout: default
   </header>
 
   <section class="team" aria-label="The team">
-    <img class="team__photo" src="{{ site.data.team.photo | relative_url }}" alt="{{ site.data.team.photo_alt }}">
+    <img class="team__photo" src="{% link assets/img/team.jpg %}" alt="The ZECsy Team">
     <div class="team__body">
-      <h2 class="team__title">{{ site.data.team.heading }}</h2>
-      <p class="team__vision">{{ site.data.team.vision }}</p>
+      <h2 class="team__title" id="about-zecsy">About ZECsy</h2>
+      <p class="team__vision">
+          Founded by <a href="https://VioletRollergirl.com/">Violet Rollergirl</a>, ZECsy teaches financial privacy skills to adult industry workers through apprenticeship programs, workshops, and in-person outreach in order to make private digital cash easy, safe, and fun to use. Our mission is grow adoption of these safer payment mechanisms, particularly among sex workers, trans people, and others who need access to encrypted, surveillance-free money. Because financial privacy belongs to everyone.
+      </p>
       {% if site.data.team.members %}
       <ul class="team__members" id="zecsy-team-members">
         {% for member in site.data.team.members %}
@@ -99,15 +101,15 @@ layout: default
     <p class="donate__blurb">{{ site.donation.label }}</p>
 
     {% if site.donation.description %}
-    <p class="donate__description">{{ site.donation.description }}</p>
-    <p class="donate__description">Donate to support our ZECsy initiative using the options below, or use the Zcash donation/message option to send a personal donation to a specific <a href="#zecsy-team-members">ZECsy team member</a> with a private memo. We appreciate your support!</p>
+    <p class="donate__description">{{ site.donation.description | markdownify }}</p>
+    <p class="donate__description">Donate to support the ZECsy initiative using the options below, or use the Zcash donation/message option to send a personal donation to a specific <a href="#zecsy-team-members">ZECsy team member</a> with a private memo. We appreciate your support!</p>
     {% endif %}
 
     {% if site.donation.tiers %}
     <ul class="donate__tiers">
       {% for tier in site.donation.tiers %}
       <li class="tier">
-        <span class="tier__amount">{{ tier.amount }}</span>
+        <span class="tier__amount">{{ tier.currency_symbol | default: "$" }}{{ tier.amount }} {{ tier.currency | default: "USD" }}</span>
         <span class="tier__text">{{ tier.text }}</span>
       </li>
       {% endfor %}
@@ -120,11 +122,11 @@ layout: default
       <code id="address">{{ site.donation.uaddress }}</code>
       <button id="copy" type="button" aria-label="Copy address">Copy</button>
     </div>
-    <p class="donate__hint">Scan with any Zcash wallet, or copy the unified address above.</p>
+    <p class="donate__hint">Scan with any <a href="https://openzcash.org/wallets">Zcash wallet app</a>, or copy the unified address above.</p>
   </section>
 
   <footer class="footer">
-    <p>&copy; <span id="year"></span> ZECsy &middot; Powered by <a href="https://z.cash" target="_blank" rel="noopener">Zcash</a></p>
+      <p>ZECsy &middot; Copyright &copy; by <a href="https://VioletRollergirl.com/">Violet Rollergirl</a> {{ "now" | date: "%Y" }}. All rights reserved.</p>
   </footer>
 
 </main>

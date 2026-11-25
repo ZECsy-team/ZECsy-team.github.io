@@ -5,7 +5,7 @@ description: >-
   ZECsy is an education, outreach, and advocacy initiative for sex workers
   by sex workers, helping one another access and use private payment ecosystems.
   We connect sex workers with private, safe, and fun tools that helps us
-  fight back against financial discrimination, cryptocurrency scams, and surveillance
+  resist and circumvent financial discrimination, cryptocurrency scams, and surveillance
   risks. Find our guides, app recommendations, merchant tools, merch, and upcoming events
   — all in one place.
 
@@ -39,13 +39,21 @@ donation:
     amount of starter ZEC during the class to practice trades, swaps, and
     off-ramping.
   tiers:
-    - amount: "$50"
+    - amount: "50"
+      currency: USD
+      currency_symbol: "$"
       text: "Student tuition for a ZECsy workshop"
-    - amount: "$500"
+    - amount: "500"
+      currency: USD
+      currency_symbol: "$"
       text: "Venue fee for a workshop"
-    - amount: "$6K"
+    - amount: "6000"
+      currency: USD
+      currency_symbol: "$"
       text: "Fully covers travel, venue, and tuition for 30 students in a US city"
-    - amount: "$2"
+    - amount: "2"
+      currency: USD
+      currency_symbol: "$"
       text: "Any small amount helps us reach the users who need financial education"
 
 # Build settings

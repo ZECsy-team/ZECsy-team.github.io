@@ -1,16 +1,3 @@
-# "The Team" section.
-# Replace the placeholder photo: drop your team picture into assets/img/
-# (e.g. assets/img/team.jpg) and update the path below.
-photo: "/assets/img/team.jpg"
-photo_alt: "The ZECsy team"
-heading: "About ZECsy"
-vision: >-
-  We're cryptocurrency users who work in the adult industries making private
-  digital cash easy, safe, and fun to use. ZECsy exists to grow adoption of
-  these safer payment mechanisms, particularly among sex workers, trans
-  people, and others who need access to encrypted, surveillance-free money.
-  Because financial privacy belongs to everyone.
-
 # Team members shown under the vision statement.
 # socials: platform must match an icon in _includes/icons/ (x, linkedin).
 # Omit socials (or leave the list empty) to show "socials coming soon".
