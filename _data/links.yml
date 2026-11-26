@@ -8,9 +8,14 @@
   url: "https://zodl.com"
   icon: "wallet"
 
-- title: "Zcash Guides"
-  subtitle: "Learn how to use Zcash, step by step"
+- title: "Zcash Guides (for Sellers)"
+  subtitle: "Get set up to accept Zcash, step by step"
   url: "https://violetrollergirl.com/resources/for-providers/using-cryptocurrency/"
+  icon: "storefront"
+
+- title: "Zcash Guides (for Buyers)"
+  subtitle: "Learn how to buy, shield, and spend Zcash"
+  url: "/guides/for-buyers/quick-start/"
   icon: "book"
 
 - title: "Accept Zcash at Your Business"
