@@ -3,9 +3,9 @@
 # Set url to "#" and tbd: true for links that aren't live yet.
 # Set internal: true for pages on this site, so they open in the same tab.
 
-- title: "Download a Wallet"
-  subtitle: "Zodl — the flagship Zcash mobile wallet"
-  url: "https://zodl.com"
+- title: "Choose and install a Wallet App"
+  subtitle: "Wallet apps to get, store, and spend Zcash"
+  url: "https://openzcash.org/wallets/"
   icon: "wallet"
 
 - title: "Zcash Guides (for Sellers)"
