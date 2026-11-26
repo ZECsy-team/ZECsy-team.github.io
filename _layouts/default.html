@@ -13,8 +13,8 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ page_title }}">
   <meta property="og:description" content="{{ page_description }}">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ site.data.team.photo }}">
+  <meta property="og:url" content="{% link index.html %}">
+  <meta property="og:image" content="{% link assets/img/team.jpg %}">
   <meta name="twitter:card" content="summary">
   {% if site.twitter_handle != "" %}<meta name="twitter:site" content="@{{ site.twitter_handle }}">{% endif %}
 
