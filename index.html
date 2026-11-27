@@ -33,14 +33,39 @@ layout: default
       </ul>
       {% endif %}
     </div>
-    <div class="videos" style="text-align: center;">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/ty6JuQZ-NG0?si=reMkxJ4tVSjjZfzt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/dX9mXkdk5pM?si=orwRtvHT8EsfOkrI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/MPaUZUcW9q8?si=tbQqtaoyqMtm5TOo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/UHg4b7D6Y-c?si=s2CqnF8h-_hp4zhY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/8baGLxkh6mE?si=NHYyYZlvfmOlgmBG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
   </section>
+
+  <section class="videos" aria-label="ZECsy videos">
+      <ul class="zv-grid">
+          <li><a class="zv-card" href="https://www.youtube.com/watch?v=ty6JuQZ-NG0" data-yt="ty6JuQZ-NG0" aria-label="How Real People Are Really Living On Crypto In Real Life">
+                  <img src="https://i.ytimg.com/vi/ty6JuQZ-NG0/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"></a></li>
+          <li><a class="zv-card" href="https://www.youtube.com/watch?v=dX9mXkdk5pM" data-yt="dX9mXkdk5pM" aria-label="Can Zcash Bring Financial Privacy To Everyone? | Violet Rollergirl, Co-founder, ZECsy | Devcon 8">
+                  <img src="https://i.ytimg.com/vi/dX9mXkdk5pM/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"></a></li>
+          <li><a class="zv-card" href="https://www.youtube.com/watch?v=MPaUZUcW9q8" data-yt="MPaUZUcW9q8" aria-label="Who Gets the Weight? Violet and Daira-Emma on Zcash Governance">
+                  <img src="https://i.ytimg.com/vi/MPaUZUcW9q8/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"></a></li>
+          <li><a class="zv-card" href="https://www.youtube.com/watch?v=UHg4b7D6Y-c" data-yt="UHg4b7D6Y-c" aria-label="Violet and Justine with ZK AV Club at Berlin Blockchain week 2026">
+                  <img src="https://i.ytimg.com/vi/UHg4b7D6Y-c/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"></a></li>
+          <li><a class="zv-card" href="https://www.youtube.com/watch?v=8baGLxkh6mE" data-yt="8baGLxkh6mE" aria-label="Privacy Learned and Taught on the Ground: Zcash in Real Life">
+                  <img src="https://i.ytimg.com/vi/8baGLxkh6mE/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"></a></li>
+      </ul>
+  </section>
+  <script>
+      // Click-to-load: swap the thumbnail for the player only when asked.
+      document.querySelectorAll('.zv-card[data-yt]').forEach(function (card) {
+          card.addEventListener('click', function (e) {
+              if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return; // allow open-in-new-tab
+              e.preventDefault();
+              var iframe = document.createElement('iframe');
+              iframe.src = 'https://www.youtube-nocookie.com/embed/' + card.dataset.yt + '?autoplay=1&rel=0';
+              iframe.title = card.getAttribute('aria-label').replace('Play ', '').replace(' on YouTube', '');
+              iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+              iframe.allowFullscreen = true;
+              card.replaceChildren(iframe);
+              card.removeAttribute('href');
+              card.classList.add('is-playing');
+          });
+      });
+  </script>
 
   <section class="slogan" aria-label="Slogan">
     <p class="slogan__text">Privacy is ZECsy</p>
